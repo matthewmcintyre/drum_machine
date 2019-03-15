@@ -1,0 +1,12 @@
+html {
+  background-color: #ed6a5a;
+  text-align: center;
+}
+
+#wrapper {
+  width: 80vw;
+  border: solid red 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}

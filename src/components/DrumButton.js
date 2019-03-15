@@ -2,7 +2,12 @@ import React from "react";
 import "./DrumButton.css";
 
 function DrumButton(props) {
-  return <button className="myButton">{props.text}</button>;
+  return (
+    <div id={props.buttonName} className="myButton">
+      {props.text}
+      <audio id={props.audioName} src={props.src} type="audio/mp3" />
+    </div>
+  );
 }
 
 export default DrumButton;

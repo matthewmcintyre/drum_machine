@@ -1,3 +1,10 @@
 .myButton {
-  border: solid black 20px;
+  background-color: #f4f1bb;
+  border: solid #9bc1bc 5px;
+  transition: 0.6s;
+  width: 30px;
+  height: 30px;
+}
+.myButton:hover {
+  border: solid blue 5px;
 }
