@@ -3,20 +3,7 @@ import DrumMachine from "./DrumMachine";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Header from "../components/Header";
-
-const initialState = {
-  active: true
-};
-
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    case "PLAYSOUND":
-      return true;
-
-    default:
-      return state;
-  }
-}
+import reducer from "../reducers/index";
 
 const store = createStore(reducer);
 

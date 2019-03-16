@@ -6,114 +6,118 @@ import DrumButton from "../components/DrumButton";
 import soundList from "../components/soundList";
 
 class DrumMachine extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      volume: 0.5,
-      status: "off",
-      currentSoundID: ""
-    };
-  }
-
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
-
-  setPower() {
-    console.log("setPower called with value" + this.state.status);
-    if (this.state.status === "on") {
-      this.setState({ status: "off" });
+  setPower = () => {
+    if (this.props.power === "off") {
+      this.props.dispatch({ type: "POWERON" });
     } else {
-      this.setState({ status: "on" });
+      this.props.dispatch({ type: "POWEROFF" });
     }
-  }
+  };
 
   handleKeyDown = event => {
     this.playSound(event.key);
     console.log(event.key);
   };
 
-  currentSound = key => {
-    this.setState({
-      currentSound: key
-    });
+  handleClick = event => {
+    console.log(event.target.innerText);
+    this.playSound(event.target.innerText);
   };
 
   playSound = key => {
-    this.currentSound(soundList[key].name);
-    console.log(key);
-    console.log(soundList.test);
-    switch (key) {
-      case "q":
-        document.getElementById(key).play();
+    if (this.props.power === "on") {
+      switch (key) {
+        case "q":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "Q" });
+          console.log("q was pressed");
+          break;
 
-        console.log("q was pressed");
-        break;
+        case "w":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "W" });
+          console.log("w was pressed");
+          break;
 
-      case "w":
-        document.getElementById(key).play();
-        console.log("w was pressed");
-        break;
+        case "e":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "E" });
+          console.log("e was pressed");
+          break;
 
-      case "e":
-        document.getElementById(key).play();
-        console.log("e was pressed");
-        break;
+        case "a":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "A" });
+          console.log("a was pressed");
+          break;
 
-      case "a":
-        document.getElementById(key).play();
-        console.log("a was pressed");
-        break;
+        case "s":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "S" });
+          console.log("s was pressed");
+          break;
 
-      case "s":
-        document.getElementById(key).play();
-        console.log("s was pressed");
-        break;
+        case "d":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "D" });
+          console.log("d was pressed");
+          break;
 
-      case "d":
-        document.getElementById(key).play();
-        console.log("d was pressed");
-        break;
+        case "z":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "Z" });
+          console.log("z was pressed");
+          break;
 
-      case "z":
-        document.getElementById(key).play();
-        console.log("z was pressed");
-        break;
+        case "x":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "X" });
+          console.log("x was pressed");
+          break;
 
-      case "x":
-        document.getElementById(key).play();
-        console.log("x was pressed");
-        break;
+        case "c":
+          document.getElementById(key).play();
+          this.props.dispatch({ type: "C" });
+          console.log("c was pressed");
+          break;
 
-      case "c":
-        document.getElementById(key).play();
-        console.log("c was pressed");
-        break;
-
-      default:
-        break;
+        default:
+          break;
+      }
     }
   };
 
   render() {
     const buttons = Object.values(soundList).map(x => {
       console.log(x);
-      return <DrumButton audioName={x.key} text={x.key} src={x.sound} />;
+      return (
+        <DrumButton
+          handleClick={this.handleClick}
+          audioName={x.key}
+          text={x.key}
+          src={x.sound}
+        />
+      );
     });
+
+    document.addEventListener("keydown", this.handleKeyDown);
 
     return (
       <div>
         <div id="wrapper">{buttons}</div>
         <SoundControl
-          status={this.state.status}
-          text={this.state.currentSound}
-          handleClick={this.power}
+          status={this.props.power}
+          text={this.props.currentSound}
+          handleClick={this.setPower}
         />
       </div>
     );
   }
 }
 
-//const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  power: state.powerStatus.power,
+  currentSound: state.setSound.currentSound
+});
 
-export default connect()(DrumMachine);
+export default connect(mapStateToProps)(DrumMachine);
