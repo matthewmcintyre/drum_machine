@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "00fcae80018a359ee88f",
-    "url": "/drum_machine/static/css/main.9f8d75b3.chunk.css"
+    "revision": "aec41c47cb7e96c0d6bc",
+    "url": "/drum_machine/static/css/main.c6add03a.chunk.css"
   },
   {
-    "revision": "00fcae80018a359ee88f",
-    "url": "/drum_machine/static/js/main.90890435.chunk.js"
+    "revision": "aec41c47cb7e96c0d6bc",
+    "url": "/drum_machine/static/js/main.285b0631.chunk.js"
   },
   {
     "revision": "eca1fd0fb4770abd83ca",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/drum_machine/static/media/Kick_n_Hat.200b4bd3.mp3"
   },
   {
-    "revision": "27b642a274274a46585ef4b1162ba7b3",
+    "revision": "ab1a47120c5c0b6e44600012f1ee0d62",
     "url": "/drum_machine/index.html"
   }
 ];
