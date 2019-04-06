@@ -1,8 +1,12 @@
 import React from "react";
-import "./Header.css";
+import styled from "styled-components";
+
+const Heading = styled.h1`
+  color: #36c9c6;
+`;
 
 function Header() {
-  return <h1>Drum Machine</h1>;
+  return <Heading>Drum Machine</Heading>;
 }
 
 export default Header;

@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./DrumMachine.css";
-import SoundControl from "../components/SoundControl";
+import styled from "styled-components";
+import SoundControl from "../components/SoundControl/SoundControl";
 import DrumButton from "../components/DrumButton";
 import soundList from "../components/soundList";
+
+const ButtonWrapper = styled.div`
+  margin: auto;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+  padding: 10px;
+`;
 
 class DrumMachine extends Component {
   setPower = () => {
@@ -104,7 +114,7 @@ class DrumMachine extends Component {
 
     return (
       <div>
-        <div id="wrapper">{buttons}</div>
+        <ButtonWrapper>{buttons}</ButtonWrapper>
         <SoundControl
           status={this.props.power}
           text={this.props.currentSound}
