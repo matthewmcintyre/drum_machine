@@ -1,0 +1,2 @@
+export const TOGGLE_POWER = "TOGGLE_POWER";
+export const SELECTED_SOUND = "SELECTED_SOUND";

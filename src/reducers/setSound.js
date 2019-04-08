@@ -1,37 +1,45 @@
+import { SELECTED_SOUND } from "../actions/actionTypes";
+
 const initialState = {
-  currentSound: "None"
+  currentSound: "No Sound Selected"
 };
 
-export default function setSound(state = initialState, action) {
-  switch (action.type) {
-    case "Q":
-      return { currentSound: "Heater 1" };
+const setSound = (state = initialState, action) => {
+  if (action.type === SELECTED_SOUND) {
+    switch (action.key) {
+      case "q":
+        return { ...state, currentSound: "Heater 1" };
 
-    case "W":
-      return { currentSound: "Heater 2" };
+      case "w":
+        return { ...state, currentSound: "Heater 2" };
 
-    case "E":
-      return { currentSound: "Heater 3" };
+      case "e":
+        return { ...state, currentSound: "Heater 3" };
 
-    case "A":
-      return { currentSound: "Heater 4" };
+      case "a":
+        return { ...state, currentSound: "Heater 4" };
 
-    case "S":
-      return { currentSound: "Heater 5" };
+      case "s":
+        return { ...state, currentSound: "Heater 5" };
 
-    case "D":
-      return { currentSound: "Chord 1" };
+      case "d":
+        return { ...state, currentSound: "Chord 1" };
 
-    case "Z":
-      return { currentSound: "Chord 2" };
+      case "z":
+        return { ...state, currentSound: "Chord 2" };
 
-    case "X":
-      return { currentSound: "Chord 3" };
+      case "x":
+        return { ...state, currentSound: "Chord 3" };
 
-    case "C":
-      return { currentSound: "Kick n Hat" };
+      case "c":
+        return { ...state, currentSound: "Kick n Hat" };
 
-    default:
-      return state;
+      default:
+        return state;
+    }
+  } else {
+    return state;
   }
-}
+};
+
+export default setSound;

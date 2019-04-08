@@ -1,12 +1,12 @@
-import Heater1 from "../sounds/Heater-1.mp3";
-import Heater2 from "../sounds/Heater-2.mp3";
-import Heater3 from "../sounds/Heater-3.mp3";
-import Heater4 from "../sounds/Heater-4.mp3";
-import Heater5 from "../sounds/Heater-5.mp3";
-import Chord1 from "../sounds/Chord_1.mp3";
-import Chord2 from "../sounds/Chord_2.mp3";
-import Chord3 from "../sounds/Chord_3.mp3";
-import KickNHat from "../sounds/Kick_n_Hat.mp3";
+import Heater1 from "../../sounds/Heater-1.mp3";
+import Heater2 from "../../sounds/Heater-2.mp3";
+import Heater3 from "../../sounds/Heater-3.mp3";
+import Heater4 from "../../sounds/Heater-4.mp3";
+import Heater5 from "../../sounds/Heater-5.mp3";
+import Chord1 from "../../sounds/Chord_1.mp3";
+import Chord2 from "../../sounds/Chord_2.mp3";
+import Chord3 from "../../sounds/Chord_3.mp3";
+import KickNHat from "../../sounds/Kick_n_Hat.mp3";
 
 const soundList = {
   q: {
